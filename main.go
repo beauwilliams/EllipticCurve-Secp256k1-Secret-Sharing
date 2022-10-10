@@ -49,6 +49,7 @@ func main() {
 	PE := G.Mul(msg1)
 	PEm := G.Mul(malMsg1)
 
+        //Do our ECC math to check if the points are on the curve or not.
 	ss_b := PE.Mul(sA).Add(PE.Mul(A.Neg())).Mul(b)
 	ss_a := PE.Mul(sB).Add(PE.Mul(B.Neg())).Mul(a)
 	ss_c := PEm.Mul(sB).Add(PEm.Mul(B.Neg())).Mul(a)
